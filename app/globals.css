@@ -11,16 +11,71 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
-
+/* 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  /* background: var(--background);
+  color: var(--foreground); */
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Skip-to-content link: hidden until it receives keyboard focus. */
+.skip-link {
+  position: absolute;
+  left: 0.75rem;
+  top: -3rem;
+  z-index: 100;
+  border-radius: 9999px;
+  background-color: #020617; /* slate-950 */
+  padding: 0.625rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #ffffff;
+  transition: top 150ms ease-in-out;
+}
+
+.skip-link:focus {
+  top: 0.75rem;
+  outline: 2px solid #020617;
+  outline-offset: 2px;
+}
+
+/* Remove the focus outline on the programmatically-focused main landmark. */
+#main:focus {
+  outline: none;
+}
+
+/* Skeleton loading shimmer — sweeps a soft highlight across placeholder blocks */
+@keyframes skeleton-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.skeleton {
+  background-color: rgb(226 232 240); /* slate-200 fallback */
+  background-image: linear-gradient(
+    100deg,
+    rgba(226, 232, 240, 0) 40%,
+    rgba(248, 250, 252, 0.9) 50%,
+    rgba(226, 232, 240, 0) 60%
+  );
+  background-size: 200% 100%;
+  background-repeat: no-repeat;
+  animation: skeleton-shimmer 1.6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton {
+    animation: none;
+  }
 }
