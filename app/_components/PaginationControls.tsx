@@ -40,13 +40,13 @@ export default function PaginationControls({
       <ReactPaginate
         breakLabel="…"
         nextLabel={
-          <span className="flex items-center gap-1">
+          <span className="cursor-pointer flex items-center gap-1">
             Next
             <ChevronRight className="size-4" aria-hidden="true" />
           </span>
         }
         previousLabel={
-          <span className="flex items-center gap-1">
+          <span className="cursor-pointer flex items-center gap-1">
             <ChevronLeft className="size-4" aria-hidden="true" />
             Previous
           </span>

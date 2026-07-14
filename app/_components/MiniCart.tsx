@@ -49,9 +49,9 @@ export default function MiniCart() {
         aria-expanded={open}
         aria-controls="mini-cart-panel"
         aria-label={`Cart with ${count} item${count === 1 ? "" : "s"}`}
-        className="cursor-pointer relative flex items-center rounded-full text-gray-700 transition hover:text-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900"
+        className="relative flex items-center rounded-full text-gray-700 transition hover:text-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900"
       >
-        <ShoppingCart className="h-6 w-6" aria-hidden="true" />
+        <ShoppingCart className="h-6 w-6 cursor-pointer" aria-hidden="true" />
         {count > 0 && (
           <span className="absolute -right-2 -top-2 flex min-h-5 min-w-5 items-center justify-center rounded-full bg-slate-950 px-1.5 text-[11px] font-semibold text-white">
             {count}
